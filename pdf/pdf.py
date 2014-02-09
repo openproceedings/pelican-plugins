@@ -28,7 +28,8 @@ class PdfGenerator(Generator):
         pdf_style = self.settings['PDF_STYLE']
         self.pdfcreator = RstToPdf(breakside=0,
                                    stylesheets=[pdf_style],
-                                   style_path=[pdf_style_path])
+                                   style_path=[pdf_style_path],
+                                   def_dpi=100)
 
     def _create_pdf(self, obj, output_path):
         if obj.source_path.endswith('.rst'):
